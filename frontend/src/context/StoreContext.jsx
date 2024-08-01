@@ -51,11 +51,13 @@ const loadCartData = async (token) => {
 useEffect(()=>{
     async function loadData(){
         await fetchFoodList();
-        if (localStorage.getItem("token")) {
-            setToken(localStorage.getItem("token"));
-            await loadCartData(localStorage.getItem("token"));
-        }
+        const storedToken = localStorage.getItem("token");
+
+        if (storedToken) {
+            setToken(storedToken);
+            await loadCartData(storedToken);
     }
+}
 })
 
 

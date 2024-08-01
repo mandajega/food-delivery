@@ -27,10 +27,10 @@ const Cart = () => {
           if(cartItems[item._id]>0)
             {
               return (
-                <div>
+                <div key={index} className='cart-item'>
                   <div className='cart-items-title cart-items-item'>
                   <img src={item.image} alt="" />
-                  <p>{item.name}</p>
+                  <p data-testid="item-name">{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>${item.price*cartItems[item._id]}</p>
