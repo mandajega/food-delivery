@@ -58,7 +58,7 @@ describe('LoginPopup Component', () => {
   
     
     test('shows alert on failed login attempt', async () => {
-        window.alert = jest.fn(); // Mock the alert function
+        window.alert = jest.fn(); 
         axios.post.mockResolvedValueOnce({
           data: { success: false, message: 'Login failed' }
         });
