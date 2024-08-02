@@ -17,14 +17,14 @@ describe('LoginPopup Component Tests', () => {
   });
 
   it('should log out the user', () => {
-    // Open the profile dropdown
+    
     cy.get('.navbar-profile').click();
     cy.get('.nav-profile-dropdown').invoke('show').click();
     
-    // Click on the Logout button
+    
     cy.get('li').contains('Logout').click();
 
-    // Verify the user is logged out
+    
     cy.get('button').contains('sign in').should('exist');
     cy.get('.navbar-profile').should('not.exist');
   });
